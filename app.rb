@@ -27,7 +27,7 @@ class PeerPair < Sinatra::Base
 
   def this_wednesday
     date = Date.today
-    date += 1 + ((2-date.wday) % 7)
+    date += 1 + ((2 - date.wday) % 7)
     date.to_time
   end
 
