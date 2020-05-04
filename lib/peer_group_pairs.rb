@@ -9,8 +9,8 @@ class PeerGroupPairs
 
   TEST_PAIR_1 = "(" + APR20_PEER_GROUP_1 + ") & (" + APR20_PEER_GROUP_2 + ")"
   TEST_PAIR_2 = "(" + APR20_PEER_GROUP_3 + ") & (" + APR20_PEER_GROUP_4 + ")"
-  TEST_PAIR_3 = "(" + APR20_PEER_GROUP_5 + ") & (" + APR20_PEER_GROUP_6 + ") & ("
-  TEST_PAIR_3 += APR20_PEER_GROUP_7 + ")"
+  TEST_PAIR_3 = "(" + APR20_PEER_GROUP_5 + ") & (" + APR20_PEER_GROUP_6 + ") & " \
+              + "(" + APR20_PEER_GROUP_7 + ")"
 
   def shuffle
     [TEST_PAIR_1, TEST_PAIR_2, TEST_PAIR_3]

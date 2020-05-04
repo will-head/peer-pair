@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/peer_group_pairs'
 
 # Global for verbose output
 # $verbose = true
@@ -6,6 +7,8 @@ require 'sinatra/base'
 class PeerPair < Sinatra::Base
   get '/' do
     verbose_output(request.url) if $verbose
+
+    @peer_pairs = PeerGroupPairs.new.shuffle
 
     erb :index
   end
