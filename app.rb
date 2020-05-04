@@ -8,7 +8,8 @@ class PeerPair < Sinatra::Base
   get '/' do
     verbose_output(request.url) if $verbose
 
-    @peer_pairs = PeerGroupPairs.new.shuffle
+    @this_wednesday = this_wednesday
+    @peer_pairs = PeerGroupPairs.new.shuffle(@this_wednesday.to_i)
 
     erb :index
   end
@@ -22,6 +23,12 @@ class PeerPair < Sinatra::Base
     puts "\n#{where}"
     puts "session: "; p session
     puts "params: "; p params
+  end
+
+  def this_wednesday
+    date = Date.today
+    date += 1 + ((2-date.wday) % 7)
+    date.to_time
   end
 
 end
