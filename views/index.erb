@@ -1,7 +1,11 @@
 <h1>Peer Group Pairs for <%= @this_wednesday.strftime('%A %d %b %Y')  %></h1>
 
-<ul>
-  <% @peer_pairs.each do |peer_pair| %>
-    <li><%= peer_pair %></li>
+<br />
+  <% @peer_pairs.each_with_index do |peer_pair,i| %>
+    /zoom meeting group <%= i+1 %><br />
+    <%= peer_pair %><br />
+    <br />
+    <br />
   <% end %>
-</ul>
+<br />
+Note: paste each line seperately to Slack and not as a thread (/zoom doesn't work in threads)
