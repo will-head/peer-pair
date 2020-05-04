@@ -7,7 +7,7 @@ class PeerPair < Sinatra::Base
   get '/' do
     verbose_output(request.url) if $verbose
 
-    'Pairs for Wednesday'
+    erb :index
   end
 
   # start the server if ruby file executed directly
