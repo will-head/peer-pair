@@ -10,8 +10,10 @@ The Sinatra app shows the pairings for the next Wednesday to occur.
 
 ## Usage
 
+Set up the database using the commands in 'db/migrations/01_create_and_populate_database.sql'
+
 ```
-1. $ bundle install
+$ bundle install
 2. $ ./run
 ```
 
