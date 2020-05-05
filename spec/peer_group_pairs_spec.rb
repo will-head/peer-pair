@@ -10,4 +10,13 @@ describe PeerGroupPairs do
   
   end
 
+  # TODO: This test doesn't go here
+  # describe '#next_day(day)' do
+
+  #   it 'returns the next Wednesday' do
+  #     expect(subject.next_day(:wednesday)).to eq "2020-05-06 00:00:00 +0100"
+  #   end
+
+  # end
+
 end
