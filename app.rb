@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/peer_group_pairs'
+require_relative 'lib/zoom_links'
 
 # Global for verbose output
 # $verbose = true
@@ -10,6 +11,7 @@ class PeerPair < Sinatra::Base
 
     @this_wednesday = this_wednesday
     @peer_pairs = PeerGroupPairs.new.shuffle(@this_wednesday.to_i)
+    @zoom_links = ZoomLinks.links
 
     erb :index
   end

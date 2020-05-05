@@ -6,7 +6,7 @@
   <% @peer_pairs.each_with_index do |peer_pair,i| %>
     Peer Group Pair <%= i+1 %><br />
     <%= peer_pair %><br />
-    Zoom link: <br />
+    Zoom link: <%= @zoom_links[i] %><br />
     <br />
     <br />
   <% end %>
