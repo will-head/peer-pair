@@ -1,7 +1,5 @@
 <h1>Peer Group Pairs for <%= @this_wednesday.strftime('%A %d %b %Y')  %></h1>
 
-<br /> <%= @this_wednesday %>
-
 <br />
   <% @peer_pairs.each_with_index do |peer_pair,i| %>
     Peer Group Pair <%= i+1 %><br />
