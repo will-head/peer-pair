@@ -18,6 +18,7 @@ The Sinatra app shows the pairings for the next Wednesday to occur.
 ## Improvements
 
 * Refactor this_wednesday to return any next day
+* Refactor PeerGroupPairs to use Class method
 * Seed shuffle method with nil and then assign Time.now.to_i to pass rubocop?
 * Use Zoom api to setup meetings
 * Add copy button to copy text to clipboard

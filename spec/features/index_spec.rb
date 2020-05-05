@@ -10,9 +10,10 @@ feature '/' do
     expect(page).to have_content PeerGroupPairs::APR20_PEER_GROUP_5
     expect(page).to have_content PeerGroupPairs::APR20_PEER_GROUP_6
     expect(page).to have_content PeerGroupPairs::APR20_PEER_GROUP_7
-    expect(page).to have_content "/zoom meeting group 1"
-    expect(page).to have_content "/zoom meeting group 2"
-    expect(page).to have_content "/zoom meeting group 3"
+    expect(page).to have_content "Peer Group Pair 1"
+    expect(page).to have_content "Peer Group Pair 2"
+    expect(page).to have_content "Peer Group Pair 3"
+    expect(page).to have_content "Zoom link: "
   end
 
 end
