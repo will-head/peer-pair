@@ -1,13 +1,21 @@
 require 'pg'
 
 class PeerGroupPairs
-  APR20_PEER_GROUP_1 = "Ed B, Patrick, Jed"
+  # APR20_PEER_GROUP_1 = "Ed B, Patrick, Jed"
+  # APR20_PEER_GROUP_2 = "Hesam, Marius, Tanil"
+  # APR20_PEER_GROUP_3 = "Paula, Jo Y, Ed A"
+  # APR20_PEER_GROUP_4 = "Andrew, Asif, Gareth"
+  # APR20_PEER_GROUP_5 = "Will, Marija, Cat" 
+  # APR20_PEER_GROUP_6 = "Colin, Zsofi, Jo C"
+  # APR20_PEER_GROUP_7 = "Lizzie, Ellis, Dec, Hibo"
+
+  APR20_PEER_GROUP_1 = "Ed B, Jed, Patrick"
   APR20_PEER_GROUP_2 = "Hesam, Marius, Tanil"
-  APR20_PEER_GROUP_3 = "Paula, Jo Y, Ed A"
+  APR20_PEER_GROUP_3 = "Ed A, Jo Y, Paula"
   APR20_PEER_GROUP_4 = "Andrew, Asif, Gareth"
-  APR20_PEER_GROUP_5 = "Will, Marija, Cat" 
-  APR20_PEER_GROUP_6 = "Colin, Zsofi, Jo C"
-  APR20_PEER_GROUP_7 = "Lizzie, Ellis, Dec, Hibo"
+  APR20_PEER_GROUP_5 = "Cat, Marija, Will" 
+  APR20_PEER_GROUP_6 = "Colin, Jo C, Zsofi"
+  APR20_PEER_GROUP_7 = "Dec, Ellis, Hibo, Lizzie"
 
   TEST_PAIR_1 = "(" + APR20_PEER_GROUP_7 + ") (" + APR20_PEER_GROUP_3 + ")"
   TEST_PAIR_2 = "(" + APR20_PEER_GROUP_2 + ") (" + APR20_PEER_GROUP_1 + ")"
@@ -36,7 +44,8 @@ class PeerGroupPairs
       result = connection.exec(" \
         SELECT * FROM students \ 
         WHERE cohort='april2020' \ 
-        AND peer_group=#{i}; \
+        AND peer_group=#{i} \
+        ORDER BY name; \
         ")
       names = result.map { |name| name['name'] }
       group.push(names.join(", "))
