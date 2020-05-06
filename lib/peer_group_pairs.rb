@@ -40,17 +40,27 @@ class PeerGroupPairs
     connection = PG.connect(dbname: 'peer_group_pairs')
 
     # TODO loop number of peer_groups in db
-    (1..7).each do |i|
-      result = connection.exec(" \
-        SELECT * FROM students \ 
-        WHERE cohort='april2020' \ 
-        AND peer_group=#{i} \
-        ORDER BY name; \
-        ")
+    (1..7).each do |index|
+      result = get_peer_group(connection, index)
+      # result = connection.exec(" \
+      #   SELECT * FROM students \ 
+      #   WHERE cohort='april2020' \ 
+      #   AND peer_group=#{i} \
+      #   ORDER BY name; \
+      #   ")
       names = result.map { |name| name['name'] }
       group.push(names.join(", "))
     end 
     return group
+  end
+
+  def get_peer_group(connection, index)
+    connection.exec(" \
+        SELECT * FROM students \ 
+        WHERE cohort='april2020' \ 
+        AND peer_group=#{index} \
+        ORDER BY name; \
+        ")
   end
 
 end
