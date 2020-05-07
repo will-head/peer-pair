@@ -6,8 +6,13 @@ require_relative 'lib/zoom_links'
 # $verbose = true
 
 class PeerPair < Sinatra::Base
-  get '/' do
+
+  before '/' do
     verbose_output(request.url) if $verbose
+  end
+
+  get '/' do
+    # verbose_output(request.url) if $verbose
 
     @this_wednesday = this_wednesday
     @peer_pairs = PeerGroupPairs.new.shuffle(@this_wednesday.to_i)
