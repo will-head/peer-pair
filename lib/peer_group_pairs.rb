@@ -22,7 +22,7 @@ class PeerGroupPairs
   TEST_PAIR_3 = "(" + APR20_PEER_GROUP_5 + ") (" + APR20_PEER_GROUP_4 + ") " \
               + "(" + APR20_PEER_GROUP_6 + ")"
 
-  def shuffle(seed = Time.now.to_i)
+  def shuffle(seed = now_as_int)
 
     srand(seed)
     peer_group = make_group.shuffle!
@@ -61,6 +61,10 @@ class PeerGroupPairs
         AND peer_group=#{index} \
         ORDER BY name; \
         ")
+  end
+
+  def now_as_int
+    Time.now.to_i
   end
 
 end
