@@ -21,6 +21,7 @@ This will open the default browser and load http://localhost:9292, probably befo
 
 ## Improvements
 
+* Refactor to use test environment
 * Update logic so on a Wednesday, it shows the current Wednesday, not the next one
 * Refactor this_wednesday to return any next day
 * Refactor PeerGroupPairs to use Class method
