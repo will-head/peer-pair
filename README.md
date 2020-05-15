@@ -21,6 +21,7 @@ This will open the default browser and load http://localhost:9292, probably befo
 
 ## Improvements
 
+* Refactor to create array based on number of items in database
 * Refactor to use test environment
 * Update logic so on a Wednesday, it shows the current Wednesday, not the next one
 * Refactor this_wednesday to return any next day
